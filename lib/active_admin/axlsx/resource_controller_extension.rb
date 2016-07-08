@@ -8,7 +8,7 @@ module ActiveAdmin
       end
 
       # patching the index method to allow the xlsx format.
-      def index_with_xlsx(arg=nil, &block)
+      def index_with_xlsx(options={}, &block)
         index_without_xlsx(options) do |format|
            format.xlsx do
             xlsx = active_admin_config.xlsx_builder.serialize(collection)
